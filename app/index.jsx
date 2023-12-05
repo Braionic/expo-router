@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native'
+import { View, Text, StyleSheet, Pressable, Button } from 'react-native'
 import React from 'react'
 import { Link, router } from 'expo-router'
+
 
 const index = () => {
   return (
     <View style={styles.container}>
+        
       <Link href={{pathname: 'blog/[id]', params: {id: 6000000}}}>
       <Text>index</Text>
       </Link>
@@ -12,6 +14,13 @@ const index = () => {
       <Text>Second Button</Text>
       </Pressable>
       
+      <Link href='/login' asChild>
+        <Button title='Login' />
+      </Link>
+
+      <Link href='(tabs)/home' asChild>
+        <Button title='Tabs' />
+      </Link>
 
     </View>
   )

@@ -6,7 +6,6 @@ export default function Layout() {
   return (
          <Stack
       screenOptions={{
-        headerLeft: () => <Button onPress={() => setCount(c => c + 1)} title="Update count" />,
         
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -14,10 +13,14 @@ export default function Layout() {
         },
       }}
     >
+        <Stack.Screen name='(tabs)' options={{headerShown: false}} />
         <Stack.Screen options={{headerStyle: {
           backgroundColor: '#333',
-        }}} name='index' />
+        },  headerLeft: () => <Button onPress={() => setCount(c => c + 1)} title="Update count" />,}} name='index' />
         <Stack.Screen options={{title: 'Hello', headerTintColor: 'red'}} name='Profile' />
+        <Stack.Screen name='login' options={{presentation: 'modal'}} />
+        
     </Stack>
+
   )
 }
